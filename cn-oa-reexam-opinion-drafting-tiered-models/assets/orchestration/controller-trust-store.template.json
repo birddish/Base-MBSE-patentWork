@@ -1,0 +1,20 @@
+{
+  "schema_version": "controller-trust/1.0",
+  "issuer": "codex-controller-v2",
+  "key_id": "codex-controller-rsa-2026-01",
+  "store_id": "TRUST-STORE-...",
+  "issued_at": "YYYY-MM-DDThh:mm:ssZ",
+  "expires_at": "YYYY-MM-DDThh:mm:ssZ",
+  "nonce": "NONCE-...",
+  "revision": 0,
+  "model_registry": {
+    "Luna": ["gpt-5.6-luna"],
+    "Terra": ["gpt-5.6-terra"],
+    "Sol": ["gpt-5.6-sol"]
+  },
+  "execution_receipts": [],
+  "release_receipts": [],
+  "authorization_receipts": [],
+  "revoked_receipt_ids": [],
+  "signature": "base64-rsa-signature"
+}

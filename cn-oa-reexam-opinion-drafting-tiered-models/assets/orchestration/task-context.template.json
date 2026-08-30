@@ -1,0 +1,23 @@
+{
+  "schema_version": "multi-model-task/2.0",
+  "case_id": "CASE-...",
+  "task_id": "TASK-...",
+  "workflow": "cn-oa-reexam",
+  "stage": "stage-0",
+  "execution_mode": "advisory",
+  "assigned_tier": "Luna",
+  "task_context_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "input_snapshot_id": "SNAP-...",
+  "input_snapshot_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "input_object_ids": [],
+  "source_inputs": [],
+  "allowed_read_scope": [],
+  "allowed_actions": [],
+  "forbidden_actions": [],
+  "expected_output_class": "extraction",
+  "expected_result_class": null,
+  "expected_outputs": [],
+  "merge_allowlist": ["staging/luna/"],
+  "escalation_triggers": [],
+  "invalidation_triggers": []
+}

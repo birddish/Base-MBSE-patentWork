@@ -1,0 +1,4 @@
+interface:
+  display_name: "答审复审意见陈述"
+  short_description: "生成并审计可追溯的中国专利答审与复审意见"
+  default_prompt: "使用 $cn-oa-reexam-opinion-drafting，根据审查意见或驳回决定、申请文件和对比文件，先建立准入与证据门，再完成 MBSE 建模、事实审计、追溯链分析、答复撰写和双重就绪性审计。"

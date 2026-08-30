@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "catalog_version": "multi-model-schema-catalog/2.0",
+  "schemas": {
+    "case_context_manifest": {
+      "type": "object",
+      "required": ["schema_version", "case_id", "workflow", "execution_mode", "orchestration_status", "current_stage", "active_snapshot", "evidence_pack", "blocked_by"],
+      "properties": {
+        "schema_version": {"const": "multi-model-orchestration/2.0"},
+        "case_id": {"type": "string"},
+        "workflow": {"type": "string"},
+        "execution_mode": {"enum": ["advisory", "orchestrated"]},
+        "orchestration_status": {"enum": ["advisory_only", "pilot", "enabled"]},
+        "current_stage": {"type": "string"},
+        "active_snapshot": {"type": "object", "required": ["id", "hash", "inputs"], "properties": {"id": {"type": "string"}, "hash": {"type": "string"}, "inputs": {"type": "array"}}},
+        "evidence_pack": {"type": "object"},
+        "blocked_by": {"type": "array"}
+      }
+    },
+    "task_context": {
+      "type": "object",
+      "required": ["schema_version", "case_id", "task_id", "workflow", "stage", "execution_mode", "assigned_tier", "task_context_hash", "input_snapshot_id", "input_snapshot_hash", "source_inputs", "expected_output_class", "merge_allowlist"],
+      "properties": {"schema_version": {"const": "multi-model-task/2.0"}, "assigned_tier": {"enum": ["Luna", "Terra", "Sol"]}, "execution_mode": {"enum": ["advisory", "orchestrated"]}, "source_inputs": {"type": "array"}, "merge_allowlist": {"type": "array"}}
+    },
+    "task_handoff": {
+      "type": "object",
+      "required": ["schema_version", "case_id", "task_id", "workflow", "stage", "execution_mode", "assigned_tier", "attorney_confirmation_id", "authority_class", "output_class", "task_context_hash", "task_handoff_hash", "input_snapshot_id", "input_snapshot_hash", "lifecycle_status", "generated_files", "merge_target", "blocked_for_merge"],
+      "properties": {"schema_version": {"const": "multi-model-handoff/2.0"}, "assigned_tier": {"enum": ["Luna", "Terra", "Sol"]}, "actual_model_tier": {"type": ["string", "null"]}, "authority_class": {"enum": ["unverified", "verified"]}, "lifecycle_status": {"enum": ["active", "stale", "invalidated", "superseded"]}, "generated_files": {"type": "array"}, "blocked_for_merge": {"type": "boolean"}}
+    },
+    "routing_ledger": {"type": "object", "required": ["schema_version", "case_id", "events"], "properties": {"schema_version": {"const": "multi-model-routing/2.0"}, "events": {"type": "array"}}},
+    "invalidation_ledger": {"type": "object", "required": ["schema_version", "case_id", "revision", "events"], "properties": {"schema_version": {"const": "multi-model-invalidation/2.0"}, "revision": {"type": "integer"}, "events": {"type": "array"}}},
+    "model_registry": {"type": "object", "required": ["schema_version", "tiers"], "properties": {"schema_version": {"const": "multi-model-registry/2.0"}, "tiers": {"type": "object"}}},
+    "execution_record": {"type": "object", "required": ["schema_version", "execution_record_id", "case_id", "task_id", "workflow", "stage", "source_skill", "task_context_hash", "task_handoff_hash", "output_hash", "cross_handoff_hash", "invalidation_ledger_hash", "invalidation_revision", "assigned_tier", "actual_model_id", "actual_model_tier", "input_snapshot_id", "input_snapshot_hash", "controller", "record_hash"], "properties": {"schema_version": {"const": "multi-model-execution/2.0"}, "actual_model_tier": {"enum": ["Luna", "Terra", "Sol"]}, "invalidation_revision": {"type": "integer"}}},
+    "attorney_confirmation": {"type": "object", "required": ["schema_version", "issuer", "key_id", "issued_at", "expires_at", "nonce", "confirmation_id", "case_id", "stage", "snapshot_id", "snapshot_hash", "artifact_refs", "confirmation_scope", "confirmed_by_role", "confirmed_by", "confirmed_at", "attorney_confirmed", "signature"], "properties": {"schema_version": {"const": "attorney-confirmation/1.0"}, "artifact_refs": {"type": "array", "items": {"type": "object", "required": ["artifact_id", "version", "sha256"]}}, "confirmation_scope": {"type": "array"}, "attorney_confirmed": {"type": "boolean"}, "confirmed_by": {"type": "string"}, "confirmed_at": {"type": "string"}, "signature": {"type": "string"}}},
+    "controller_trust_store": {"type": "object", "required": ["schema_version", "issuer", "key_id", "store_id", "issued_at", "expires_at", "nonce", "revision", "model_registry", "execution_receipts", "release_receipts", "authorization_receipts", "revoked_receipt_ids", "signature"], "properties": {"schema_version": {"const": "controller-trust/1.0"}, "revision": {"type": "integer"}, "execution_receipts": {"type": "array"}, "release_receipts": {"type": "array"}, "authorization_receipts": {"type": "array"}, "revoked_receipt_ids": {"type": "array"}, "signature": {"type": "string"}}}
+  }
+}

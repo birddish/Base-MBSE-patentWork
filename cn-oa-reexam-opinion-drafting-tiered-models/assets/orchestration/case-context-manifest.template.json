@@ -1,0 +1,23 @@
+{
+  "schema_version": "multi-model-orchestration/2.0",
+  "case_id": "CASE-...",
+  "workflow": "cn-oa-reexam",
+  "execution_mode": "advisory",
+  "orchestration_status": "enabled",
+  "current_stage": "stage-0",
+  "baseline_date": "YYYY-MM-DD",
+  "active_snapshot": {
+    "id": "SNAP-...",
+    "hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "inputs": []
+  },
+  "active_object_ids": [],
+  "evidence_pack": {
+    "path": "patent_evidence_pack.json",
+    "schema_version": "v2.2-oa",
+    "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "confirmed_inputs": [],
+  "blocked_by": [],
+  "updated_at": "YYYY-MM-DDThh:mm:ssZ"
+}

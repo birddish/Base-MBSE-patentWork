@@ -1,0 +1,4 @@
+interface:
+  display_name: "答审复审（模型分工）"
+  short_description: "按 Luna、Terra、Sol 分工的中国专利答审复审流程"
+  default_prompt: "使用 $cn-oa-reexam-opinion-drafting-tiered-models，按受控上下文和模型权限完成准入、事实审计、创造性分析、修改重算与答复审计。"

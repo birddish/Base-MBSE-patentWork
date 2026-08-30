@@ -1,0 +1,4 @@
+interface:
+  display_name: "中国专利撰写全流程"
+  short_description: "基于MBSE、保护单元准入与证据追溯的中国专利撰写流程"
+  default_prompt: "使用 $cn-patent-drafting-workflow，按 CHAIN→PU→PST→权利要求主线完成中国专利撰写、检索反馈、确认与审计。"

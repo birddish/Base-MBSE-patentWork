@@ -1,0 +1,361 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "catalog_version": "cross-skill-schema-catalog/2.0",
+    "schemas": {
+        "search_context": {
+            "type": "object",
+            "required": [
+                "schema_version",
+                "context_hash",
+                "authorization_receipt_id",
+                "source_skill",
+                "source_skill_version",
+                "target_skill",
+                "target_skill_version",
+                "source_task_id",
+                "case_id",
+                "execution_mode",
+                "upstream_snapshot_id",
+                "upstream_snapshot_hash",
+                "target_active_snapshot_id",
+                "target_active_snapshot_hash",
+                "source_manifest_hash",
+                "target_manifest_hash",
+                "source_stage",
+                "target_stage",
+                "mode",
+                "mode_payload",
+                "required_jurisdictions",
+                "required_languages",
+                "feature_set_hash",
+                "pst_boundary_signature",
+                "source_files",
+                "source_evidence_locations",
+                "approved_query_ids",
+                "approved_query_definitions",
+                "allowed_writeback"
+            ],
+            "properties": {
+                "schema_version": {
+                    "const": "search-context/2.0"
+                },
+                "mode": {
+                    "enum": [
+                        "novelty",
+                        "invalidity",
+                        "fto",
+                        "landscape"
+                    ]
+                },
+                "source_files": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "path",
+                            "version",
+                            "sha256"
+                        ]
+                    }
+                },
+                "source_evidence_locations": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "source_file_path",
+                            "source_file_hash",
+                            "location"
+                        ]
+                    }
+                },
+                "approved_query_ids": {"type": "array"},
+                "approved_query_definitions": {
+                    "type": "array",
+                    "items": {"type": "object", "required": ["query_id", "definition_hash"]}
+                }
+            }
+        },
+        "search_handoff": {
+            "type": "object",
+            "required": [
+                "schema_version",
+                "handoff_hash",
+                "source_skill",
+                "source_skill_version",
+                "target_skill",
+                "target_skill_version",
+                "source_task_id",
+                "review_task_id",
+                "execution_record_id",
+                "execution_record_hash",
+                "case_id",
+                "execution_mode",
+                "actual_model_id",
+                "actual_model_tier",
+                "authority_class",
+                "output_class",
+                "result_class",
+                "upstream_snapshot_id",
+                "upstream_snapshot_hash",
+                "target_active_snapshot_id",
+                "target_active_snapshot_hash",
+                "source_manifest_hash",
+                "target_manifest_hash",
+                "source_stage",
+                "target_stage",
+                "search_snapshot_id",
+                "search_snapshot_hash",
+                "feature_set_hash",
+                "pst_boundary_signature",
+                "query_run_ids",
+                "query_run_refs",
+                "documents",
+                "evidence_links",
+                "verified_findings",
+                "allowed_writeback",
+                "writeback_objects"
+            ],
+            "properties": {
+                "schema_version": {
+                    "const": "search-handoff/2.0"
+                },
+                "authority_class": {
+                    "enum": [
+                        "unverified",
+                        "verified"
+                    ]
+                },
+                "query_run_refs": {
+                    "type": "array",
+                    "items": {"type": "object", "required": ["run_id", "run_hash"]}
+                },
+                "documents": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "document_id",
+                            "publication_number",
+                            "publication_date",
+                            "version",
+                            "source_task_id",
+                            "query_run_id"
+                        ]
+                    }
+                },
+                "evidence_links": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "evidence_id",
+                            "document_id",
+                            "source_task_id",
+                            "query_run_id",
+                            "full_text_location",
+                            "source_file_path",
+                            "source_file_hash"
+                        ]
+                    }
+                },
+                "verified_findings": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "finding_id",
+                            "classification",
+                            "novelty_observation",
+                            "inventive_step_observation",
+                            "source_task_id",
+                            "review_task_id",
+                            "execution_record_id",
+                            "execution_record_hash",
+                            "evidence"
+                        ],
+                        "properties": {
+                            "classification": {"enum": ["X", "Y", "A"]},
+                            "novelty_observation": {"enum": ["not_assessed", "single_document_risk", "insufficient_single_document_coverage"]},
+                            "inventive_step_observation": {"enum": ["not_assessed", "combination_risk", "combination_insufficient", "pending"]},
+                            "combination_path": {"type": ["object", "null"]},
+                            "evidence": {
+                                "type": "object",
+                                "required": [
+                                    "evidence_id",
+                                    "document_id",
+                                    "full_text_location",
+                                    "source_file_path",
+                                    "source_file_hash",
+                                    "query_run_id"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "writeback_objects": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "object_id",
+                            "object_type",
+                            "version",
+                            "path",
+                            "sha256",
+                            "source_task_id"
+                        ]
+                    }
+                }
+            }
+        },
+        "oa_context": {
+            "type": "object",
+            "required": [
+                "schema_version",
+                "context_hash",
+                "authorization_receipt_id",
+                "source_skill",
+                "source_skill_version",
+                "target_skill",
+                "target_skill_version",
+                "source_task_id",
+                "case_id",
+                "execution_mode",
+                "upstream_snapshot_id",
+                "upstream_snapshot_hash",
+                "target_active_snapshot_id",
+                "target_active_snapshot_hash",
+                "source_manifest_hash",
+                "target_manifest_hash",
+                "source_stage",
+                "target_stage",
+                "submitted_claim_set_id",
+                "submitted_claim_set_hash",
+                "source_files",
+                "source_evidence_locations",
+                "evidence_pack_schema",
+                "evidence_pack_hash",
+                "allowed_writeback"
+            ],
+            "properties": {
+                "schema_version": {
+                    "const": "oa-context/2.0"
+                },
+                "source_files": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "path",
+                            "version",
+                            "sha256"
+                        ]
+                    }
+                },
+                "source_evidence_locations": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "source_file_path",
+                            "source_file_hash",
+                            "location"
+                        ]
+                    }
+                }
+            }
+        },
+        "oa_handoff": {
+            "type": "object",
+            "required": [
+                "schema_version",
+                "handoff_hash",
+                "source_skill",
+                "source_skill_version",
+                "target_skill",
+                "target_skill_version",
+                "source_task_id",
+                "review_task_id",
+                "execution_record_id",
+                "execution_record_hash",
+                "case_id",
+                "execution_mode",
+                "actual_model_id",
+                "actual_model_tier",
+                "authority_class",
+                "output_class",
+                "upstream_snapshot_id",
+                "upstream_snapshot_hash",
+                "target_active_snapshot_id",
+                "target_active_snapshot_hash",
+                "source_manifest_hash",
+                "target_manifest_hash",
+                "source_stage",
+                "target_stage",
+                "source_claim_set_id",
+                "supersedes",
+                "response_documents",
+                "verified_findings",
+                "invalidated_object_ids",
+                "recalculation_gate_passed",
+                "client_accepted",
+                "attorney_confirmed",
+                "allowed_writeback",
+                "writeback_objects"
+            ],
+            "properties": {
+                "schema_version": {
+                    "const": "oa-handoff/2.0"
+                },
+                "recalculation_gate_passed": {
+                    "type": "boolean"
+                },
+                "client_accepted": {
+                    "type": "boolean"
+                },
+                "attorney_confirmed": {
+                    "type": "boolean"
+                },
+                "verified_findings": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "finding_id",
+                            "source_task_id",
+                            "review_task_id",
+                            "execution_record_id",
+                            "execution_record_hash",
+                            "evidence"
+                        ],
+                        "properties": {
+                            "evidence": {
+                                "type": "object",
+                                "required": [
+                                    "document_id",
+                                    "full_text_location",
+                                    "source_file_hash"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "writeback_objects": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "object_id",
+                            "object_type",
+                            "version",
+                            "path",
+                            "sha256",
+                            "source_task_id"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

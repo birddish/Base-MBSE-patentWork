@@ -1,0 +1,22 @@
+{
+  "schema_version": "oa-context-manifest/2.0",
+  "case_id": "CASE-...",
+  "execution_mode": "advisory",
+  "main_mode": "mechanical",
+  "delivery_depth": "standard",
+  "upstream_snapshot_id": "SNAP-...",
+  "upstream_snapshot_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "oa_active_snapshot_id": "OA-SNAP-...",
+  "oa_active_snapshot_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "active_claim_set_id": "CLMSET-...",
+  "active_claim_set_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "primary_strategy_id": null,
+  "issue_ids": [],
+  "document_eligibility_version": "ELIG-v2",
+  "evidence_pack_path": "patent_evidence_pack.json",
+  "evidence_pack_schema": "v2.2-oa",
+  "evidence_pack_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "recalculation_gate_passed": false,
+  "legacy_snapshot_ids": [],
+  "blocked_by": []
+}
