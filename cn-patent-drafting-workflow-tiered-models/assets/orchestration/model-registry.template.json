@@ -1,0 +1,8 @@
+{
+  "schema_version": "multi-model-registry/2.0",
+  "tiers": {
+    "Luna": ["gpt-5.6-luna"],
+    "Terra": ["gpt-5.6-terra"],
+    "Sol": ["gpt-5.6-sol"]
+  }
+}

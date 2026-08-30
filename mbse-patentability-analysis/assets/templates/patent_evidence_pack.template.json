@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.2",
+  "case": {
+    "case_id": "CASE-001",
+    "jurisdiction": "CN",
+    "reference_date": "YYYY-MM-DD",
+    "status": "draft",
+    "draft_mode": "prereview",
+    "target_claim_count": null
+  },
+  "model": {
+    "R": [],
+    "F": [],
+    "S": [],
+    "B": [],
+    "E": [],
+    "IF": [],
+    "CV": [],
+    "STATE": []
+  },
+  "workflow": {
+    "chains": [],
+    "protectable_units": [],
+    "protection_subjects": [],
+    "contexts": [],
+    "innovation_units": [],
+    "exclusion_records": [],
+    "claim_branch_inventory": [],
+    "combination_support": [],
+    "admission_records": [],
+    "claim_mappings": [],
+    "dependency_graph": {
+      "nodes": [],
+      "edges": [],
+      "formal_audit": "Q",
+      "semantic_audit": "Q"
+    },
+    "compression": {
+      "performed": false,
+      "before_count": 0,
+      "after_count": 0,
+      "reason": ""
+    },
+    "metrics": {
+      "v1_master_claim_count": 0,
+      "v2_master_claim_count": 0,
+      "v2_independent_claim_count": 0,
+      "closed_main_chain_count": 0,
+      "open_candidate_count": 0,
+      "strengthening_subchain_count": 0,
+      "excluded_record_count": 0,
+      "pu_candidate_count": 0
+    }
+  },
+  "claims": [],
+  "feature_groups": [],
+  "documents": [],
+  "evidence": [],
+  "novelty_assessments": [],
+  "inventive_step_assessments": [],
+  "prosecution_events": [],
+  "version_history": []
+}

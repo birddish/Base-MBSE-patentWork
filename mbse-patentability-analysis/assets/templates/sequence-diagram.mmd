@@ -1,0 +1,25 @@
+sequenceDiagram
+    participant U as 用户
+    participant UI as 用户交互界面
+    participant UEBA as UEBA引擎
+    participant AGG as 属性聚合
+    participant ABAC as ABAC引擎
+    participant LLM as LLM脱敏引擎
+    participant LOG as 行为日志库
+    U->>UI: 发起访问请求(用户ID/文件ID/操作类型/环境属性)
+    UI->>UEBA: 传递请求上下文
+    UEBA->>UEBA: 比对行为基线，计算偏离程度
+    UEBA->>AGG: 输出风险分值(0-1)
+    AGG->>AGG: 聚合用户属性+文件标签+环境属性+风险分值
+    AGG->>ABAC: 输出事实元组
+    ABAC->>ABAC: Rete规则匹配，双重冲突消解
+    alt 裁决=允许
+        ABAC->>UI: 直接返回请求内容
+    else 裁决=脱敏后允许
+        ABAC->>LLM: 脱敏指令(超出权限区段)
+        LLM->>UI: 返回脱敏后内容
+    else 裁决=拒绝
+        ABAC->>UI: 返回拒绝通知
+    end
+    UI->>LOG: 记录完整上下文及裁决结果
+    LOG->>UEBA: 供基线自优化(闭环)

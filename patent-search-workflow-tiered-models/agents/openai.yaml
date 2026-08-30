@@ -1,0 +1,4 @@
+interface:
+  display_name: "专利检索（模型分工）"
+  short_description: "按 Luna、Terra、Sol 分工的六语全球专利检索流程"
+  default_prompt: "使用 $patent-search-workflow-tiered-models，按受控上下文和Luna、Terra、Sol权限完成六语全球检索、全文证据核验与报告。"

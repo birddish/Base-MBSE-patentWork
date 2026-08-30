@@ -1,0 +1,4 @@
+interface:
+  display_name: "六语全球专利检索工作流"
+  short_description: "六语全球检索优先，覆盖中美日韩欧洲及PCT并以MCP核对核心文献。支持查新/无效/FTO/专利态势分析四种模式，各有独立引用指南。"
+  default_prompt: "使用 $patent-search-workflow，先以中、英、日、韩、法、德六语进行跨法域全球检索；仅在结果无法稳定一次性提取时按法域拆分，并通过 MCP 核对核心文献。根据任务类型参考对应模式指南（references/mode-*.md）。"

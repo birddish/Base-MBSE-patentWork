@@ -1,0 +1,20 @@
+{
+  "schema_version": "attorney-confirmation/1.0",
+  "issuer": "codex-attorney-attestation-v2",
+  "key_id": "codex-attorney-rsa-2026-01",
+  "issued_at": "YYYY-MM-DDThh:mm:ssZ",
+  "expires_at": "YYYY-MM-DDThh:mm:ssZ",
+  "nonce": "NONCE-...",
+  "confirmation_id": "CONF-...",
+  "case_id": "CASE-...",
+  "stage": "stage-...",
+  "snapshot_id": "SNAP-...",
+  "snapshot_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "artifact_refs": [],
+  "confirmation_scope": [],
+  "confirmed_by_role": "patent_attorney",
+  "confirmed_by": "ATTORNEY-...",
+  "confirmed_at": "YYYY-MM-DDThh:mm:ssZ",
+  "attorney_confirmed": true,
+  "signature": "base64-rsa-signature"
+}

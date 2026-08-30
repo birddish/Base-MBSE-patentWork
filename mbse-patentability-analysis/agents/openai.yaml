@@ -1,0 +1,4 @@
+interface:
+  display_name: "基于MBSE模型的可专利性分析"
+  short_description: "交底书四视角建模、创新点提炼与检索要素生成"
+  default_prompt: "使用 $mbse-patentability-analysis 对该技术交底书进行建模，并输出经确认的可专利性检索要素 Markdown 报告。"
