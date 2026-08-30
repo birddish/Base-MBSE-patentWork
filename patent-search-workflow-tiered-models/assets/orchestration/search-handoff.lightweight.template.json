@@ -1,0 +1,12 @@
+{
+  "schema_version": "search-handoff/lightweight-1.0",
+  "delivery_profile": "standard",
+  "case_id": "CASE-...",
+  "mode": "novelty",
+  "queries": [{"query_text": "", "database": "", "executed_at": "YYYY-MM-DDThh:mm:ssZ"}],
+  "raw_result_files": ["sources/results.json"],
+  "jurisdiction_distribution": {"CN": 0, "US": 0, "JP": 0, "KR": 0, "EP": 0, "WO": 0},
+  "documents": [],
+  "evidence_links": [],
+  "risk_register": []
+}

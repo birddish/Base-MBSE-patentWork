@@ -1,0 +1,14 @@
+{
+  "schema_version": "query-definition/1.0",
+  "query_id": "QUERY-...",
+  "case_id": "CASE-...",
+  "mode": "novelty",
+  "query_text": "",
+  "feature_set_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "approval_task_id": "TASK-...",
+  "approved_by": "ATTORNEY-OR-SOL-...",
+  "approved_at": "YYYY-MM-DDThh:mm:ssZ",
+  "languages": ["zh", "en", "ja", "ko", "fr", "de"],
+  "jurisdictions": ["CN", "US", "JP", "KR", "EP", "WO"],
+  "definition_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+}

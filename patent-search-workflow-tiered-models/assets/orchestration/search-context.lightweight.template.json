@@ -1,0 +1,12 @@
+{
+  "schema_version": "search-context/lightweight-1.0",
+  "delivery_profile": "standard",
+  "case_id": "CASE-...",
+  "mode": "novelty",
+  "mode_payload": {"solution_or_claim_feature_set_id": "FEATURESET-...", "feature_set_version": "1", "baseline_date": "YYYY-MM-DD"},
+  "required_jurisdictions": ["CN", "US", "JP", "KR", "EP", "WO"],
+  "required_languages": ["zh", "en", "ja", "ko", "fr", "de"],
+  "feature_set_id": "FEATURESET-...",
+  "input_scope": "",
+  "source_files": []
+}
